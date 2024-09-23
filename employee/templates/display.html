@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor="red">
+    {% csrf_token %}
+    <table border="1" cellpadding="5" align="center">
+        <thead>
+            <tr>
+                <th>Employee Id</th>
+                <th>Employee Name</th>
+                <th>Email Address </th>
+                <th>Mobile No</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employee %}
+            <tr>
+                <td>{{ employee.eid }}</td>
+                <td>{{ employee.ename }}</td>
+                <td>{{ employee.email }}</td>
+                <td>{{ employee.contact }}</td>
+                <td>
+                    <a href="/edit/{{ employee.id }}">Edit</a>
+                    <a href="/delete/{{ employee.id }}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="emp">Add New Employee</a>
+</body>
+</html>

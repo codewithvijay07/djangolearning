@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Employee</title>
+</head>
+<body>
+    <form action="/update/{{empl.id}}" method="post">
+        {% csrf_token %}
+        <table border="0" cellpadding="5" cellspacing="5" align="center">
+            <tr>
+                <td>Employee Id</td>
+                <td>
+                    <input type="text" name="eid" id="id_eid" value="{{empl.eid}}">
+                </td>
+            </tr>
+            <tr>
+                <td>Employee Name</td>
+                <td>
+                    <input type="text" name="ename" id="id_ename" value="{{empl.ename}}">
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>
+                    <input type="email" name="email" id="id_email" value="{{empl.email}}">
+                </td>
+            </tr>
+            <tr>
+                <td>Mobile No</td>
+                <td>
+                    <input type="text" name="contact" id="id_contact" value="{{empl.contact}}">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <button type="submit">Update</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
